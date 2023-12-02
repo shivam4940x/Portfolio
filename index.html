@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link rel="icon" href="cat2.png" type="icon" /> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bellota:wght@300;700&family=Mirza&family=RocknRoll+One&family=Syne+Mono&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+    </style>
+    <title>project 3000</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/svg.css" />
+    <link rel="stylesheet" href="css/welcome.css" />
+    <link rel="stylesheet" href="css/jiggle.css" />
+    <link rel="stylesheet" href="css/menue.css" />
+  </head>
+  <body>
+    <!-- <div class="cursor"></div> -->
+    <main>
+      <div class="wrapper">
+        <header id="icons">
+          <span class="icon">
+            <svg viewBox="0 0 269 223" fill="none">
+              <path
+                d="M195.47 27.5C194 22 185.558 18.6102 160.47 9L174 30C173.766 70.7694 171.559 93.4704 164.5 133.5C159.914 154.797 154.78 166.014 142 185C132.14 197.689 124.721 203.935 107 213H120.5C133.144 213.392 139.684 209.319 150.5 195.5C157.805 184.594 163.347 175.792 167.555 168C173.3 152.5 176.693 142.409 179.5 132C193.948 152.816 200.277 167.233 212.5 191.5C216.442 197.201 220.561 200.163 230 203C251.296 204.169 260.622 203.604 268.5 198.5C250.214 189.896 241.17 184.301 227 173C220.82 167.282 215.741 159.589 207.5 145.604C199.259 131.62 195.244 127.961 185.5 117.5C187.876 78.657 188.198 55.0465 191.5 48C196.274 31.4669 196.94 33 195.47 27.5Z"
+                fill="white"
+              />
+              <path
+                d="M217 57C212.668 75.1375 205.756 84.195 190 99.5C192.966 98.8103 195.781 97.3044 204 91.5C200.925 97.9959 197.06 101.605 187.5 108C196.768 106.013 202.152 104.288 213.5 95.5C230.171 79.3018 243.593 67.8686 241.5 62.5C241.752 54.3392 232.105 50.0211 208 42.5C213.341 47.5995 216.025 50.5544 217 57Z"
+                fill="white"
+              />
+              <path
+                d="M148 106C147.864 97.5447 144.29 89.8717 136.5 75C152.929 84.4094 159.643 89.7573 164.5 99.5C166.869 109.547 166.747 113.329 164.5 117.5C162.969 120.291 161.276 121.098 156.5 121C150.67 116.482 149.035 113.078 148 106Z"
+                fill="white"
+              />
+              <path
+                d="M90 14C81.0496 26.1082 46.0314 50.7181 33 56C19.9686 61.2819 47.1414 57.2602 48 56C61.848 50.6559 71.1114 46.7015 73 49C80.3425 55.0934 81 75.5 81 75.5C81 75.5 48.113 82.8203 40 85C26.3018 85.3126 21.864 84.6727 18.5 83C26.4124 97.7126 33.5851 105.495 44 109.5C55.6085 111.28 59.7623 106.883 61.5 105.5C71.5558 99.1363 71.1066 99.7039 75.5 100C59.841 123.336 50.6133 139.177 36.5 153C26.2353 164.45 18.1688 168.988 0 174C21.3481 173.382 30.5 173 42 166C53.5 159 63.8446 140.264 78.5 126L75 205C79.2676 219.474 93.1516 231.854 94.5 211C95.8484 190.146 93.6 109.22 96 108.5C110.42 123.696 118.758 132.57 120.5 130C126.344 129.087 127.081 126.716 125 120C119.476 109.435 112.579 104.38 97.5 96V91.5C112.674 88.3107 122.382 86.3463 125 85C128.169 81.1431 128.43 78.7711 125 74C116.154 69.2699 110.527 68.3531 100 68C103.56 57.4332 101.04 51.8059 85.5 42.5C105.388 34.3361 109.685 31.62 111 28.5C112.833 22.7645 112.861 19.6822 109 14C103.003 7.91628 97.2776 4.96331 85.5 0C90.0712 11.6242 91.6263 15.9311 90 14Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+          <div>
+            <span class="icon"></span>
+            <span class="icon"
+              ><svg viewBox="0 0 525 525" fill="none">
+                <circle
+                  cx="60.5"
+                  cy="60.5"
+                  r="50.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+                <circle
+                  cx="262.5"
+                  cy="60.5"
+                  r="50.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+                <circle
+                  cx="464.5"
+                  cy="60.5"
+                  r="50.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+                <circle
+                  cx="464.5"
+                  cy="262.5"
+                  r="50.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+                <circle
+                  cx="464.5"
+                  cy="464.5"
+                  r="50.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+                <circle
+                  cx="262.5"
+                  cy="464.5"
+                  r="50.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+                <circle
+                  cx="60.5"
+                  cy="464.5"
+                  r="50.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+                <circle
+                  cx="60.5"
+                  cy="262.5"
+                  r="50.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+                <rect
+                  x="208"
+                  y="208"
+                  width="109"
+                  height="109"
+                  rx="54.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+
+                <rect
+                  x="208"
+                  y="208"
+                  width="109"
+                  height="109"
+                  rx="54.5"
+                  stroke="white"
+                  stroke-width="15"
+                />
+              </svg>
+            </span>
+          </div>
+        </header>
+        <main id="intro" class="active center">
+          <div>
+            <div id="main-txt" class="">
+              <div>
+                <h5 class="overflowH"></h5>
+                <h5 class="overflowH"></h5>
+                <h5 class="overflowH"></h5>
+              </div>
+            </div>
+            <div class="overflowH"></div>
+            <ul class="links">
+              <li class="overflowH"></li>
+              <li class="overflowH"></li>
+              <li class="overflowH"></li>
+            </ul>
+          </div>
+        </main>
+        <section id="about" class="nonActive">
+          <div>
+            <div>
+              <h3>About</h3>
+              <h3>me</h3>
+            </div>
+            <div>
+              <p>
+                Hello, I'm Shivam Singh, known online as 'Aki.' I'm a frontend
+                development and am learning backend programming as well to
+                become a full-stack web developer.<br />
+                As a self-taught programmer, I've relied on free online
+                resources to learn. I don't have any formal experience but I'm
+                looking forward to gain some. My dedication to continuous
+                learning fuels my growth, and I'm always eager to explore new
+                knowledge and techniques.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="work" class="nonActive">
+          <div>
+            <svg
+              viewBox="0 0 148 213"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M37.6735 36.0512C37.6735 16.1407 53.8141 0 73.7246 0C93.8266 0 110.122 16.2959 110.122 36.3978V75.1726C132.404 87.853 147.431 111.814 147.431 139.285C147.431 179.997 114.427 213 73.7154 213C33.0035 213 0 179.997 0 139.285C0 111.664 15.1908 87.5917 37.6735 74.9661V36.0512ZM52.2221 68.7519C59.0221 66.6824 66.2387 65.5693 73.7154 65.5693C80.9566 65.5693 87.9539 66.6134 94.5651 68.5593C94.5953 68.0961 94.6106 67.6289 94.6106 67.1581V34.989C94.6106 23.2675 85.1084 13.7653 73.3869 13.7653C61.6653 13.7653 52.1632 23.2675 52.1632 34.989V67.1581C52.1632 67.6943 52.183 68.2258 52.2221 68.7519ZM128.686 139.104C128.686 169.365 104.156 193.895 73.8956 193.895C43.6354 193.895 19.1047 169.365 19.1047 139.104C19.1047 108.844 43.6354 84.3136 73.8956 84.3136C104.156 84.3136 128.686 108.844 128.686 139.104Z"
+                fill="#579BB1"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M79.7226 140.498C82.9034 138.486 85.0155 134.938 85.0155 130.895C85.0155 124.624 79.9319 119.541 73.6608 119.541C67.3898 119.541 62.3062 124.624 62.3062 130.895C62.3062 134.97 64.4522 138.543 67.6757 140.546L64.6492 164.599H83.3935L79.7226 140.498Z"
+                fill="#C5C0FF"
+              />
+            </svg>
+
+            <div>This section will be available soon</div>
+          </div>
+        </section>
+        <section id="contact" class="nonActive">
+          <div>
+            <div>
+              <div>
+                <a href="mailto:akio6265x@gmail.com" target="_blank"
+                  >Send an Email</a
+                >
+              </div>
+              <div>
+                <a
+                  href="https://discord.com/users/952975852801523762"
+                  target="_blank"
+                  >Discord</a
+                >
+              </div>
+              <div>
+                <a href="https://github.com/Akio6265" target="_blank">Github</a>
+              </div>
+            </div>
+            <span>
+              <span> <p>I don't own a Work-Related Email yet...</p> </span>
+            </span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <canvas id="canvas"></canvas>
+    <div id="welcome">
+      <div id="skipButton" class="center">
+        <div class="skipCancel"><span></span><span></span></div>
+        <div class="bg"></div>
+        <div id="btn">
+          <span class="noselect">SKIP</span>
+          <div id="circle"></div>
+        </div>
+      </div>
+      <div id="skip">
+        <button></button>
+        <span>
+          Find the <span> imposter </span> square to reveal the portfolio.
+          <br />
+          or <br />
+          Double click anywhere to <span>skip</span>
+        </span>
+      </div>
+      <div class="tile-container"></div>
+    </div>
+    <div id="menu">
+      <div id="menu-wrap">
+        <ul>
+          <li data-text="intro"><span></span><span></span></li>
+          <li data-text="about"><span> </span><span></span></li>
+          <li data-text="work"><span></span><span></span></li>
+          <li data-text="contact"><span></span><span></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="js/bg.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/menue.js"></script>
+    <!-- <script src="js/cursor.js"></script> -->
+  </body>
+</html>

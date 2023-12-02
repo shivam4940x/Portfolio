@@ -1,0 +1,81 @@
+div > span.icon:nth-child(2) > svg > circle:not(:hover),
+div > span.icon:nth-child(2) > svg > rect:not(:hover),
+div > span.icon:nth-child(2) > svg > circle:hover,
+div > span.icon:nth-child(2) > svg > rect:hover {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  transition: all 200ms ease-in-out;
+}
+div > span.icon:nth-child(2) > svg:hover {
+  cursor: pointer;
+}
+div > span.icon:nth-child(2) > svg > rect {
+  rotate: 0;
+}
+div > span.icon:nth-child(2) > svg:hover circle:nth-child(2) {
+  transform: translate(0, -150%);
+}
+div > span.icon:nth-child(2) > svg:hover circle:nth-child(4) {
+  transform: translate(150%, 0);
+}
+div > span.icon:nth-child(2) > svg:hover circle:nth-child(6) {
+  transform: translate(0, 150%);
+}
+div > span.icon:nth-child(2) > svg:hover circle:nth-child(8) {
+  transform: translate(-150%, 0);
+}
+div > span.icon:nth-child(2) > svg:hover rect:nth-child(9) {
+  height: 100%;
+  transform-origin: center;
+  transform: translate(0, -40%);
+  transition-delay: 50ms;
+}
+
+div > span.icon:nth-child(2) > svg:hover rect:nth-child(10) {
+  width: 100%;
+  transform: translate(-38%, 0);
+  transition-delay: 50ms;
+}
+
+div > span.icon:nth-child(2) > svg.svgClicked {
+  z-index: 69;
+}
+div > span.icon:nth-child(2) > svg.svgClicked > rect {
+  rotate: 45deg;
+  transform-origin: center;
+}
+div > span.icon:nth-child(2) > svg.svgClicked > rect:nth-child(9) {
+  height: 120%;
+  transform: translate(0, -50%);
+}
+div > span.icon:nth-child(2) > svg.svgClicked > rect:nth-child(10) {
+  transform: translate(-48%, 0);
+  width: 120%;
+}
+
+div > span.icon:nth-child(2) > svg.svgClicked > circle:nth-child(1) {
+  transform: translate(-150%, -150%);
+}
+div > span.icon:nth-child(2) > svg.svgClicked > circle:nth-child(3) {
+  transform: translate(150%, -150%);
+}
+div > span.icon:nth-child(2) > svg.svgClicked > circle:nth-child(5) {
+  transform: translate(150%, 150%);
+}
+div > span.icon:nth-child(2) > svg.svgClicked > circle:nth-child(7) {
+  transform: translate(-150%, 150%);
+}
+
+div > span.icon:nth-child(2) > svg.svgClicked circle:nth-child(2) {
+  transform: translate(0, -150%);
+}
+div > span.icon:nth-child(2) > svg.svgClicked circle:nth-child(4) {
+  transform: translate(150%, 0);
+}
+div > span.icon:nth-child(2) > svg.svgClicked circle:nth-child(6) {
+  transform: translate(0, 150%);
+}
+div > span.icon:nth-child(2) > svg.svgClicked circle:nth-child(8) {
+  transform: translate(-150%, 0);
+}

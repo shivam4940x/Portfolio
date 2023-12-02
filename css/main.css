@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--white);
+}
+:root {
+  --white: rgb(225, 225, 225);
+}
+
+section#work.active
+  > div
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > span:not(:hover):before {
+  transition: 500ms ease-out;
+}
+body > main {
+  z-index: 1;
+  position: absolute;
+  /* display: none; */
+}
+div.cursor {
+  position: fixed;
+  pointer-events: none;
+  background-color: rgba(225, 225, 225);
+  /* border: 3px solid white; */
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(1) translateZ(0px);
+  mix-blend-mode: difference;
+  border-color: #f3f2f9;
+  width: 24px;
+  height: 24px;
+}
+div.wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+main > div.wrapper > header#icons {
+  position: absolute;
+  right: 13%;
+  left: 13%;
+  top: 14%;
+  display: flex;
+  height: 10%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: auto;
+  z-index: 10;
+}
+main > div.wrapper > main#intro {
+  background-color: rgba(0, 0, 0, 0.375);
+  position: absolute;
+  height: fit-content;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  top: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main#intro > div {
+  width: fit-content;
+  display: grid;
+  grid-template-rows: 4fr 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
+  font-size: 25px;
+  word-spacing: 5px;
+  letter-spacing: 4px;
+  font-family: "bellota";
+}
+
+div#main-txt > div {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  white-space: nowrap;
+  height: fit-content;
+  width: 45vw;
+  font-size: 2em;
+  font-stretch: expanded;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+div#main-txt > div > h5:nth-child(2) > div,
+div#main-txt > div > h5:nth-child(3) > div {
+  letter-spacing: 0;
+  text-transform: uppercase;
+  display: inline;
+  color: white;
+}
+div#main-txt > div > h5:nth-child(2) > div > span {
+  white-space: pre;
+}
+main > div.wrapper > main#intro div > div#main-txt > div > h5:nth-child(1) {
+  letter-spacing: -2px;
+}
+div#main-txt > div > h5 > span:nth-child(1) {
+  text-transform: uppercase;
+}
+main > div.wrapper > main#intro > div > div:nth-child(2) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 500;
+  white-space: pre;
+  width: 100%;
+}
+
+main#intro > div > div:nth-child(2) > span {
+  color: var(--white);
+}
+main#intro > div > div:nth-child(2) > span:first-child {
+  text-transform: uppercase;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul.links {
+  color: var(--white);
+  font-size: 0, 7em;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+header#icons > span.icon,
+header#icons > div:nth-child(2) > span:nth-child(2) {
+  position: relative;
+  height: 90%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+header#icons > span.icon {
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  overflow: visible;
+}
+
+header#icons > div:nth-child(2) > span:nth-child(2) {
+  height: 100%;
+  overflow: hidden;
+  padding: 5px;
+}
+
+header#icons > div:nth-child(2) > span.icon > svg {
+  height: 40px;
+  width: 40px;
+  overflow: visible;
+}
+
+header#icons > div:nth-child(2) {
+  height: 100%;
+  position: relative;
+  right: 10px;
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#menu {
+  display: none;
+}
+
+div#main-txt > div > h5 > span,
+div#main-txt > div > h5 > div > span,
+main#intro > div > div:nth-child(2) > span,
+main#intro > div > ul.links > li > span {
+  white-space: pre;
+  display: inline-block;
+}
+.nonActive {
+  display: none !important;
+}
+.active {
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  top: 45%;
+  background-color: transparent;
+  position: fixed;
+  font-family: "bellota";
+}
+section#about.active,
+section#work.active,
+section#contact.active {
+  width: 60vw;
+  display: none;
+}
+
+section#about.active > div:nth-child(1),
+section#contact.active > div:nth-child(1) {
+  display: flex;
+}
+
+section#about.active > div:nth-child(1) > div:nth-child(1) {
+  font-size: 4.2rem;
+  letter-spacing: -0.2rem;
+  text-align: center;
+  margin-right: 15px;
+}
+section#about.active > div:nth-child(1) > div:nth-child(2) {
+  font-size: 1.3rem;
+  word-spacing: 0.3rem;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+section#work.active,
+section#contact.active {
+  height: 50vh;
+  position: relative;
+}
+section#work.active > div {
+  height: 100%;
+  flex-direction: column;
+}
+section#work.active > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#work.active > div > svg {
+  width: 10vw;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+section#work.active > div > div {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+section#contact.active > div:nth-child(1) {
+  justify-content: space-around;
+  height: 100%;
+}
+section#contact.active > div:nth-child(1) > span,
+section#contact.active > div:nth-child(1) > div {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  word-spacing: 0.2rem;
+  letter-spacing: -0.1rem;
+}
+
+section#contact.active > div:nth-child(1) > div {
+  font-weight: 700;
+  flex-direction: column;
+  margin-left: 69px;
+  letter-spacing: 0.1rem;
+  justify-content: space-around;
+  align-items: baseline;
+  font-size: 1.2rem;
+}
+section#contact.active > div:nth-child(1) > div > div {
+  overflow: hidden;
+  padding: 15px;
+}
+section#contact.active > div:nth-child(1) a {
+  display: inline-block;
+  text-decoration: none;
+  text-align: left;
+  border-bottom: 1px dotted #fff;
+}
