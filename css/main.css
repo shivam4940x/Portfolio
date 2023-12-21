@@ -70,6 +70,7 @@ main#intro > div {
   word-spacing: 5px;
   letter-spacing: 4px;
   font-family: "bellota";
+  cursor: default;
 }
 
 div#main-txt > div {
@@ -268,4 +269,22 @@ section#contact.active > div:nth-child(1) a {
   text-decoration: none;
   text-align: left;
   border-bottom: 1px dotted #fff;
+}
+ul.links > li {
+  position: relative;
+}
+ul.links > li::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -2%;
+  background-color: var(--white);
+  transform: scaleX(0);
+  transition: all 200ms ease-in-out;
+  transform-origin: center;
+}
+ul.links > li:hover::before {
+  transform: scaleX(1);
 }
