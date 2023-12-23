@@ -8,7 +8,6 @@ $(document).ready(function () {
         },
         contact: [
             "section#contact.active > div:nth-child(1) > div > div > a",
-            "section#contact.active > div:nth-child(1) > span > span > p"
         ],
         about: [
             "section#about.active > div:nth-child(1) > div:nth-child(1) > h3",
@@ -367,10 +366,13 @@ $(document).ready(function () {
             }
         );
     }
+    function backToHome() {
 
+    }
 
     menuButtonClicked();
     menuButtonsHover();
-    $("div > span.icon:nth-child(2) > svg").click(function () { menuTogggle() });
+    // $("header#icons > span.icon:nth-child(1)").click(backToHome);
+    $("div > span.icon:nth-child(2) > svg").click(menuTogggle);
     //menue ends
 });

@@ -254,10 +254,9 @@ section#contact.active > div:nth-child(1) > div {
 section#contact.active > div:nth-child(1) > div {
   font-weight: 700;
   flex-direction: column;
-  margin-left: 69px;
   letter-spacing: 0.1rem;
   justify-content: space-around;
-  align-items: baseline;
+  align-items: center;
   font-size: 1.2rem;
 }
 section#contact.active > div:nth-child(1) > div > div {
