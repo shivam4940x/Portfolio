@@ -251,23 +251,53 @@ section#contact.active > div:nth-child(1) > div {
   letter-spacing: -0.1rem;
 }
 
-section#contact.active > div:nth-child(1) > div {
-  font-weight: 700;
-  flex-direction: column;
-  letter-spacing: 0.1rem;
+section#contact.active > div > ul {
+  width: 50%;
+  height: 100%;
   justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
   font-size: 1.2rem;
-}
-section#contact.active > div:nth-child(1) > div > div {
+  backdrop-filter: blur(5px);
+  background-color: rgb(255, 255, 255, 0.05);
+  border-radius: 10px;
   overflow: hidden;
-  padding: 15px;
+  padding-bottom: 10px;
+  list-style: none;
 }
-section#contact.active > div:nth-child(1) a {
-  display: inline-block;
+section#contact.active > div > ul > li {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  padding: 10px 20px;
+}
+section#contact.active > div > ul > li::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 90%;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  transform: translate(-50%, 0);
+  background-color: rgb(234, 236, 255);
+}
+section#contact.active > div > ul > li > img {
+  height: 50px;
+  border-radius: 50%;
+}
+section#contact.active > div a {
+  display: inline-flex;
+  justify-content: start;
   text-decoration: none;
-  text-align: left;
-  border-bottom: 1px dotted #fff;
+  backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100%;
 }
 ul.links > li {
   position: relative;

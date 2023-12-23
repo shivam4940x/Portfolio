@@ -7,7 +7,7 @@ $(document).ready(function () {
             bottom: $("main#intro > div > ul.links").find("span")
         },
         contact: [
-            "section#contact.active > div:nth-child(1) > div > div > a",
+            "section#contact.active > div > ul > li",
         ],
         about: [
             "section#about.active > div:nth-child(1) > div:nth-child(1) > h3",
