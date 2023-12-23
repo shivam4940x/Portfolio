@@ -61,27 +61,31 @@ main > div.wrapper > main#intro {
   justify-content: center;
   align-items: center;
 }
+main#intro {
+  font-size: 100%;
+  width: 50vw;
+}
 main#intro > div {
   width: fit-content;
   display: grid;
   grid-template-rows: 4fr 1.2fr 0.8fr;
-  grid-template-columns: 1fr;
-  font-size: 25px;
-  word-spacing: 5px;
-  letter-spacing: 4px;
+  justify-content: center;
+  align-items: center;
   font-family: "bellota";
   cursor: default;
+  /* width: 50vw; */
 }
 
 div#main-txt > div {
   display: grid;
+  font-size: 4.5em;
+  word-spacing: 0.25em;
+  letter-spacing: -0.02em;
   grid-template-rows: 1fr 1fr 1fr;
   white-space: nowrap;
   height: fit-content;
-  width: 45vw;
-  font-size: 2em;
   font-stretch: expanded;
-  font-family: "RocknRoll One", sans-serif;
+  font-family: "Mirza";
 }
 
 div#main-txt > div > h5:nth-child(2) > div,
@@ -101,10 +105,12 @@ div#main-txt > div > h5 > span:nth-child(1) {
   text-transform: uppercase;
 }
 main > div.wrapper > main#intro > div > div:nth-child(2) {
+  word-spacing: 0.3em;
+  letter-spacing: 0.05em;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 500;
   white-space: pre;
   width: 100%;
@@ -123,7 +129,7 @@ main#intro > div > div:nth-child(2) > span:first-child {
 }
 ul.links {
   color: var(--white);
-  font-size: 0, 7em;
+  font-size: 1.4em;
   display: flex;
   list-style: none;
   justify-content: space-around;
@@ -259,9 +265,9 @@ section#contact.active > div > ul {
   font-weight: 700;
   letter-spacing: 0.1rem;
   font-size: 1.2rem;
-  backdrop-filter: blur(5px);
-  background-color: rgb(255, 255, 255, 0.05);
-  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  background-color: rgb(255, 255, 255, 0.035);
+  border-radius: 15px;
   overflow: hidden;
   padding-bottom: 10px;
   list-style: none;

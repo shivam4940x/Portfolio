@@ -173,7 +173,6 @@ $(document).ready(function () {
                     scaleY: 0,
                     duration: 0.55,
                     ease: "back.out(1.8)",
-
                     delay: index * speed
                 });
             });
@@ -181,7 +180,7 @@ $(document).ready(function () {
 
         ehe(top, 0.035);
         ehe(mid, 0.08);
-        ehe(bottom, 0.1);
+        ehe(bottom, 0.26);
 
     };
 
