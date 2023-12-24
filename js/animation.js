@@ -152,7 +152,6 @@ $(document).ready(function () {
     };
     function intro(text, element, x) {
         for (let i = 0; i < text.length; i++) {
-
             $(element).append($("<span>").text(text[i]));
         }
         if (x) {
@@ -177,7 +176,6 @@ $(document).ready(function () {
                 });
             });
         }
-
         ehe(top, 0.035);
         ehe(mid, 0.08);
         ehe(bottom, 0.26);
@@ -187,22 +185,36 @@ $(document).ready(function () {
     const x = new Promise((green, red) => {
         green();
     });
-    x.then(() => {
-        intro('hello!', $('div#main-txt > div > h5:nth-child(1)'));
-        intro('my name is ', $('div#main-txt > div > h5:nth-child(2)'), function () {
-            $('div#main-txt > div > h5:nth-child(2)').append('<div>');
-            intro('shivam singh', "div#main-txt > div > h5:nth-child(2) > div", assigningHoverJiggle);
-        });
-        intro("but you can call me ", $('div#main-txt > div > h5:nth-child(3)'), function () {
-            $('div#main-txt > div > h5:nth-child(3)').append('<div>');
-            intro('aki', "div#main-txt > div > h5:nth-child(3) > div", assigningHoverJiggle);
-        });
+    x.then((green) => {
+        if (window.innerWidth <= 400) {
+            intro('hello! my name is', $('div#main-txt > div > h5:nth-child(1)'), function () {
+                $('div#main-txt > div > h5:nth-child(2)').append('<div>');
+                $('div#main-txt > div').append('<h5 class="overflowH"></h5>');
+                $('div#main-txt > div > h5:nth-child(4)').append('<div>');
+            });
+            intro('shivam', "div#main-txt > div > h5:nth-child(2) > div", assigningHoverJiggle);
+            intro("but you can call me ", $('div#main-txt > div > h5:nth-child(3)'), function () {
+                intro('aki', "div#main-txt > div > h5:nth-child(4) > div", assigningHoverJiggle);
+            });
+        }
+        else {
+            intro('hello!', $('div#main-txt > div > h5:nth-child(1)'));
+            intro('my name is ', $('div#main-txt > div > h5:nth-child(2)'), function () {
+                $('div#main-txt > div > h5:nth-child(2)').append('<div>');
+                intro('shivam', "div#main-txt > div > h5:nth-child(2) > div", assigningHoverJiggle);
+            });
+            intro("but you can call me ", $('div#main-txt > div > h5:nth-child(3)'), function () {
+                $('div#main-txt > div > h5:nth-child(3)').append('<div>');
+                intro('aki', "div#main-txt > div > h5:nth-child(3) > div", assigningHoverJiggle);
+            });
+        };
         intro("I'm a Web Developer", $('main > div.wrapper > main#intro > div > div:nth-child(2)'));
         intro("nom", $('main > div.wrapper > main#intro > div > ul.links > li:nth-child(1)'));
         intro("nom", $('main > div.wrapper > main#intro > div > ul.links > li:nth-child(2)'));
         intro("nom", $('main > div.wrapper > main#intro > div > ul.links > li:nth-child(3)'));
-    }).then(() => {
+        return green;
+    }).then((greenishGreen) => {
         initText();
-    })
+    });
 
 });

@@ -51,7 +51,6 @@ main > div.wrapper > header#icons {
   z-index: 10;
 }
 main > div.wrapper > main#intro {
-  background-color: rgba(0, 0, 0, 0.375);
   position: absolute;
   height: fit-content;
   left: 50%;
@@ -73,9 +72,10 @@ main#intro > div {
   align-items: center;
   font-family: "bellota";
   cursor: default;
-  /* width: 50vw; */
 }
-
+div#main-txt {
+  margin-bottom: 15px;
+}
 div#main-txt > div {
   display: grid;
   font-size: 4.5em;
@@ -88,8 +88,7 @@ div#main-txt > div {
   font-family: "Mirza";
 }
 
-div#main-txt > div > h5:nth-child(2) > div,
-div#main-txt > div > h5:nth-child(3) > div {
+div#main-txt > div > h5 > div {
   letter-spacing: 0;
   text-transform: uppercase;
   display: inline;
@@ -190,7 +189,7 @@ main#intro > div > ul.links > li > span {
   z-index: 1;
   left: 50%;
   transform: translate(-50%, -40%);
-  top: 45%;
+  top: 50%;
   background-color: transparent;
   position: fixed;
   font-family: "bellota";
@@ -208,14 +207,14 @@ section#contact.active > div:nth-child(1) {
 }
 
 section#about.active > div:nth-child(1) > div:nth-child(1) {
-  font-size: 4.2rem;
-  letter-spacing: -0.2rem;
-  text-align: center;
+  font-size: 4.2em;
+  letter-spacing: 0.09em;
+  flex-direction: column;
   margin-right: 15px;
 }
 section#about.active > div:nth-child(1) > div:nth-child(2) {
-  font-size: 1.3rem;
-  word-spacing: 0.3rem;
+  font-size: 1.5em;
+  word-spacing: 0.3em;
   flex-grow: 1;
   margin-left: 15px;
 }
@@ -241,7 +240,7 @@ section#work.active > div > svg {
   margin-bottom: 15px;
 }
 section#work.active > div > div {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: 700;
 }
 section#contact.active > div:nth-child(1) {
@@ -263,13 +262,13 @@ section#contact.active > div > ul {
   justify-content: space-around;
   flex-direction: column;
   font-weight: 700;
-  letter-spacing: 0.1rem;
-  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  font-size: 1.2em;
   backdrop-filter: blur(4px);
   background-color: rgb(255, 255, 255, 0.035);
   border-radius: 15px;
   overflow: hidden;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   list-style: none;
 }
 section#contact.active > div > ul > li {

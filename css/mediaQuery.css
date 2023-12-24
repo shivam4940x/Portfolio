@@ -1,0 +1,129 @@
+@media (max-width: 1250px) or (max-height: 520px) {
+  main#intro,
+  section#contact.active,
+  section#about.active,
+  section#work.active,
+  div#menu-wrap {
+    font-size: 80%;
+  }
+  section#about.active {
+    top: 50%;
+    width: 50vw;
+  }
+  section#contact.active > div > ul > li > img {
+    height: 40px;
+    border-radius: 50%;
+  }
+}
+@media (max-width: 1000px) or (max-height: 430px) {
+  main#intro,
+  section#contact.active,
+  section#about.active {
+    font-size: 60%;
+  }
+  header#icons > div:nth-child(2) > span.icon > svg {
+    height: 30px;
+    width: 30px;
+  }
+  header#icons > span.icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* mobile */
+@media (max-width: 400px) {
+  header#icons > div:nth-child(2) > span.icon > svg {
+    height: 25px;
+    width: 25px;
+  }
+  div#main-txt > div > h5 {
+    text-align: center;
+  }
+  header#icons > span.icon {
+    width: 30px;
+    height: 30px;
+  }
+  main > div.wrapper > header#icons {
+    right: 5%;
+    left: 5%;
+    top: 5%;
+    height: 5%;
+  }
+  main#intro > div {
+    width: 100%;
+    grid-template-rows: initial;
+  }
+  main > div.wrapper > main#intro {
+    transform: translate(-50%, -20%);
+    top: 30%;
+  }
+
+  main#intro {
+    font-size: 45%;
+    width: fit-content;
+  }
+  main > div.wrapper > main#intro > div > div:nth-child(2) {
+    font-size: 2.5em;
+    height: 4em;
+  }
+  ul.links {
+    height: 10em;
+    flex-direction: column;
+    width: fit-content;
+    font-size: 2.3em;
+  }
+  div#menu-wrap {
+    top: 15%;
+    width: 55vw;
+  }
+  div#menu-wrap > ul {
+    height: 100%;
+    width: 100%;
+  }
+  div#menu-wrap > ul > li {
+    transform: translate(-50%, 0);
+    height: 10vh;
+    width: 40vw;
+  }
+  div#menu-wrap > ul > li:nth-child(1) {
+    top: 0;
+    left: 50%;
+  }
+  div#menu-wrap > ul > li:nth-child(2) {
+    top: 25%;
+    left: 50%;
+  }
+  div#menu-wrap > ul > li:nth-child(3) {
+    top: 50%;
+    left: 50%;
+  }
+  div#menu-wrap > ul > li:nth-child(4) {
+    top: 75%;
+    left: 50%;
+  }
+  section#about.active {
+    top: 40%;
+    width: 70vw;
+  }
+  section#about.active > div:nth-child(1) {
+    flex-direction: column;
+  }
+  section#about.active > div:nth-child(1) > div:nth-child(1) {
+    font-size: 3em;
+    flex-direction: row;
+    margin: 20px 0;
+  }
+  section#about.active > div:nth-child(1) > div:nth-child(1) > h3 {
+    margin: 10px;
+  }
+  section#about.active > div:nth-child(1) > div:nth-child(2) {
+    margin: 0 20px;
+  }
+  section#contact.active,
+  section#about.active {
+    top: 40%;
+  }
+  section#contact.active > div > ul {
+    width: 100%;
+  }
+}

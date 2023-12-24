@@ -29,7 +29,9 @@ $(document).ready(function () {
                     });
                 });
             }
-            await $('#intro').fadeIn();
+            await $('#intro').fadeIn(function () {
+                $(this).css("display", "flex")
+            });
             menuOut(async () => {
                 ehe(elements.intro.top, 0.035);
                 ehe(elements.intro.mid, 0.08);
