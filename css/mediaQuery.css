@@ -118,6 +118,9 @@
     flex-direction: row;
     margin: 20px 0;
   }
+  section#about.active > div:nth-child(1) > div:nth-child(2) {
+    line-height: 1.8em;
+  }
   section#about.active > div:nth-child(1) > div:nth-child(1) > h3 {
     margin: 10px;
   }
@@ -126,7 +129,7 @@
   }
   section#contact.active,
   section#about.active {
-    top: 40%;
+    top: 42%;
   }
   section#contact.active > div > ul {
     width: 100%;

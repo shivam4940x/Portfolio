@@ -6,7 +6,10 @@ let width = window.innerWidth;
 let height = window.innerHeight;
 canvas.width = width;
 canvas.height = height;
-const particleCount = Math.floor((height / 10) * 1.8);
+let particleCount = Math.floor((height / 10) * 1.8);
+if (window.innerWidth <= 400) {
+    particleCount = 30;
+}
 const cursor = { x: 0, y: 0 };
 // const attractionRadius = 50;
 // const attractionStrength = 0.1;
@@ -89,9 +92,12 @@ function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (const particle of particles) {
         particle.update();
-        particle.connectToCursor();
         particle.connect(particles);
         particle.draw();
+        if (window.innerWidth > 400) {
+            particle.connectToCursor();
+        }
+
     }
 }
 
