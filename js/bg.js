@@ -25,7 +25,6 @@ class Particle {
             y: Math.random() * 2 - 1,
         };
     }
-
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -45,8 +44,9 @@ class Particle {
         }
     }
 
-    connect(particles) {
-        for (let i = 0; i < particles.length; i++) {
+    connect(particles) {//particales is an array
+        const length = particles.length;
+        for (let i = 0; i < length; i++) {
             const distance = Math.sqrt(
                 Math.pow(this.x - particles[i].x, 2) +
                 Math.pow(this.y - particles[i].y, 2)
@@ -80,39 +80,37 @@ class Particle {
 }
 
 function init() {
+    const { width, height } = canvas;
     for (let i = 0; i < particleCount; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
+        const x = Math.random() * width;
+        const y = Math.random() * height;
         particles.push(new Particle(x, y));
     }
 }
 
 function animate() {
-    requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (const particle of particles) {
+        particle.draw();
         particle.update();
         particle.connect(particles);
-        particle.draw();
-        if (window.innerWidth > 400) {
-            particle.connectToCursor();
-        }
-
+        if (window.innerWidth > 400) particle.connectToCursor();
     }
+    requestAnimationFrame(animate);
 }
 
-function updateCursor(e) {
-    cursor.x = e.clientX;
-    cursor.y = e.clientY;
-}
 
-function nom() {
+
+function resizeCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
 
 $(window).resize(nom);
-document.addEventListener("mousemove", updateCursor); // Track cursor position
+document.addEventListener("mousemove", (e) => {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+});
 init();
 animate();
