@@ -107,7 +107,7 @@ function resizeCanvas() {
     canvas.height = window.innerHeight;
 }
 
-$(window).resize(nom);
+$(window).resize(resizeCanvas);
 document.addEventListener("mousemove", (e) => {
     cursor.x = e.clientX;
     cursor.y = e.clientY;

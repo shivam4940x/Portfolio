@@ -1,7 +1,7 @@
 span.jiggle {
   display: inline-block;
   position: relative;
-  animation: jiggleJiggle 1.4s ease-in-out 1;
+  animation: jiggleJiggle 1.5s ease-in-out 1;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle drop shadow */
   transform-origin: center center;
 }

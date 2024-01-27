@@ -126,6 +126,7 @@
   }
   section#about.active > div:nth-child(1) > div:nth-child(2) {
     margin: 0 20px;
+    font-size: 1.75em;
   }
   section#contact.active,
   section#about.active {

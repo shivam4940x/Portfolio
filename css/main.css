@@ -131,7 +131,7 @@ ul.links {
   font-size: 1.4em;
   display: flex;
   list-style: none;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 header#icons > span.icon,

@@ -20,11 +20,10 @@ $(document).ready(function () {
         let currentCount = bg.childElementCount;
         if (currentCount > totalDivs) {
             $(bg).children().slice(totalDivs).remove();
-        } else if (currentCount < totalDivs) {
+        } else {
             let elementsToAdd = totalDivs - currentCount;
-            for (var i = 0; i < elementsToAdd; i++) {
-                const newDiv = document.createElement("div");
-                newDiv.classList.add("tiles");
+            for (let i = 0; i < elementsToAdd; i++) {
+                const newDiv = $('<div class="tiles"></div>');
                 bg.append(newDiv);
             }
         }
@@ -77,8 +76,6 @@ $(document).ready(function () {
     function start() {
 
         let divs = document.querySelectorAll(".tiles");
-
-        // Remove all event listeners from .tiles elements
         divs.forEach((value) => {
             $(value).off();
             $(value).removeAttr("value");
@@ -146,7 +143,7 @@ $(document).ready(function () {
             $(this).addClass('jiggle');
             setTimeout(() => {
                 $(this).removeClass('jiggle');
-            }, 1500);
+            }, 1600);
         }
         );
     };
@@ -211,7 +208,6 @@ $(document).ready(function () {
         intro("I'm a Web Developer", $('main > div.wrapper > main#intro > div > div:nth-child(2)'));
         intro("nom", $('main > div.wrapper > main#intro > div > ul.links > li:nth-child(1)'));
         intro("nom", $('main > div.wrapper > main#intro > div > ul.links > li:nth-child(2)'));
-        intro("nom", $('main > div.wrapper > main#intro > div > ul.links > li:nth-child(3)'));
         return green;
     }).then((greenishGreen) => {
         initText();
