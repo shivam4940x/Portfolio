@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Get element
         const cursor = document.querySelector('.cursor');
         // Function to add the class on mouse enter
-
-
         //main shit
         let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
 
@@ -12,14 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
             posX += (mouseX - posX) / 3;
             posY += (mouseY - posY) / 3;
 
-            // cursor.style.transform = `translate(${posX}px, ${posY}px)`;
             gsap.to('.cursor', {
                 left: posX + 'px',
                 top: posY + "px",
-                ease: "elastic.out(1, 0.3)",
-                duration: 0.200,
+                ease: "elastic.out(1, 0.2)",
             });
-            // cursor.style.top = posY + 'px'
             requestAnimationFrame(animate);
 
         }
@@ -36,13 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         this.body.addEventListener('mouseleave', function (e) {
             cursor.style.visibility = 'hidden';
         });
-        if (!yourMOm) return;
         animate();
     }
-    let yourMOm = true;
 
-    if (!yourMOm) return;
     NOMNOM();
-
 })
 

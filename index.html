@@ -22,12 +22,10 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Bellota:wght@300;700&family=Mirza&family=RocknRoll+One&family=Syne+Mono&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
     </style>
     <title>project 3000</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/svg.css" />
-    <link rel="stylesheet" href="css/welcome.css" />
     <link rel="stylesheet" href="css/jiggle.css" />
     <link rel="stylesheet" href="css/menue.css" />
     <link rel="stylesheet" href="css/mediaQuery.css" />
@@ -146,13 +144,17 @@
               <div>
                 <h5 class="overflowH"></h5>
                 <h5 class="overflowH"></h5>
-                <h5 class="overflowH"></h5>
               </div>
             </div>
             <div class="overflowH"></div>
             <ul class="links">
-              <li class="overflowH"></li>
-              <li class="overflowH"></li>
+              <li class="overflowH">
+                <a href="https://github.com/Akio6265" target="_blank"></a>
+              </li>
+              <li class="overflowH"><a href="#about"></a></li>
+              <li class="overflowH">
+                <a href="#resume"></a>
+              </li>
             </ul>
           </div>
         </main>
@@ -168,9 +170,8 @@
                 development and am learning backend programming as well to
                 become a full-stack web developer.<br />
                 As a self-taught programmer, I've relied on free online
-                resources to learn. I don't have any formal experience but I'm
-                looking forward to gain some. My dedication to continuous
-                learning fuels my growth, and I'm always ready to learn.
+                resources to learn. I don't have any formal experience yet but
+                I'm looking forward to gain some!
               </p>
             </div>
           </div>
@@ -203,7 +204,7 @@
           <div>
             <ul class="center">
               <li>
-                <img src="png/email.png" alt="" />
+                <img src="imgs/email.png" alt="" />
                 <a
                   class="center"
                   href="mailto:akio6265x@gmail.com"
@@ -212,24 +213,21 @@
                 >
               </li>
               <li>
-                <img
-                  src="https://i.pinimg.com/564x/e3/c1/a0/e3c1a0665845db9ccb30276db000f099.jpg"
-                  alt=""
-                />
-                <a class="center" href="https://discord.com" target="_blank"
-                  >Discord</a
+                <img src="imgs/linkedin.bmp" alt="" />
+                <a
+                  class="center"
+                  href="https://linkedin.com/in/shivam-singh-37b56b28b"
+                  target="_blank"
+                  >Linked In</a
                 >
               </li>
               <li>
-                <img
-                  src="https://i.pinimg.com/originals/f5/36/01/f53601133f236d1cb167ac19f05a3d60.gif"
-                  alt=""
-                />
+                <img src="/imgs/insta.bmp" alt="" />
                 <a
                   class="center"
-                  href="https://github.com/Akio6265"
+                  href="https://www.instagram.com/shivam_singh_4940x"
                   target="_blank"
-                  >Github</a
+                  >Instagram</a
                 >
               </li>
             </ul>
@@ -239,26 +237,6 @@
     </main>
 
     <canvas id="canvas"></canvas>
-    <div id="welcome">
-      <div id="skipButton" class="center">
-        <div class="skipCancel"><span></span><span></span></div>
-        <div class="bg"></div>
-        <div id="btn">
-          <span class="noselect">SKIP</span>
-          <div id="circle"></div>
-        </div>
-      </div>
-      <div id="skip">
-        <button></button>
-        <span>
-          Find the <span> imposter </span> square to reveal the portfolio.
-          <br />
-          or <br />
-          Double click anywhere to <span>skip</span>
-        </span>
-      </div>
-      <div class="tile-container"></div>
-    </div>
     <div id="menu">
       <div id="menu-wrap">
         <ul>
@@ -269,11 +247,11 @@
         </ul>
       </div>
     </div>
-
+    <div class="cursor"></div>
     <!-- scripts -->
     <script src="js/bg.js"></script>
     <script src="js/animation.js"></script>
     <script src="js/menue.js"></script>
-    <!-- <script src="js/cursor.js"></script> -->
+    <script src="js/cursor.js"></script>
   </body>
 </html>

@@ -18,7 +18,8 @@
 @media (max-width: 1000px) or (max-height: 430px) {
   main#intro,
   section#contact.active,
-  section#about.active {
+  section#about.active,
+  div#menu-wrap {
     font-size: 60%;
   }
   header#icons > div:nth-child(2) > span.icon > svg {
@@ -30,18 +31,21 @@
     height: 40px;
   }
 }
+@media (max-width: 800px) or (max-height: 520px) {
+}
 /* mobile */
-@media (max-width: 400px) {
+@media (max-width: 670px) {
   header#icons > div:nth-child(2) > span.icon > svg {
     height: 30px;
     width: 30px;
   }
-  div#main-txt > div > h5 {
-    text-align: center;
-  }
+
   header#icons > span.icon {
     width: 35px;
     height: 35px;
+  }
+  div#main-txt {
+    margin-bottom: 0;
   }
   header#icons > div:nth-child(2) {
     width: fit-content;
@@ -67,7 +71,7 @@
   }
   main > div.wrapper > main#intro > div > div:nth-child(2) {
     font-size: 2.5em;
-    height: 4em;
+    height: 3em;
   }
   ul.links {
     height: 10em;
@@ -116,7 +120,8 @@
   section#about.active > div:nth-child(1) > div:nth-child(1) {
     font-size: 3em;
     flex-direction: row;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    margin-right: 0;
   }
   section#about.active > div:nth-child(1) > div:nth-child(2) {
     line-height: 1.8em;

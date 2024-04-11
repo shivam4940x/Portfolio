@@ -4,6 +4,25 @@
   box-sizing: border-box;
   color: var(--white);
 }
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+div#welcome {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+}
+canvas#canvas {
+  position: absolute;
+  background-color: #000000;
+  background-size: 400% 400%;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+}
 :root {
   --white: rgb(225, 225, 225);
 }
@@ -67,21 +86,21 @@ main#intro {
 main#intro > div {
   width: fit-content;
   display: grid;
-  grid-template-rows: 4fr 1.2fr 0.8fr;
+  grid-template-rows: 3fr 1.2fr 0.8fr;
   justify-content: center;
   align-items: center;
   font-family: "bellota";
   cursor: default;
 }
-div#main-txt {
+/* div#main-txt {
   margin-bottom: 15px;
-}
+} */
 div#main-txt > div {
   display: grid;
   font-size: 4.5em;
   word-spacing: 0.25em;
   letter-spacing: -0.02em;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   white-space: nowrap;
   height: fit-content;
   font-stretch: expanded;
@@ -107,9 +126,11 @@ main > div.wrapper > main#intro > div > div:nth-child(2) {
   word-spacing: 0.3em;
   letter-spacing: 0.05em;
   display: inline-flex;
-  justify-content: center;
+  justify-content: start;
+  padding-left: 5px;
   align-items: center;
-  font-size: 2em;
+  font-size: 2.2em;
+  margin: 10px 0;
   font-weight: 500;
   white-space: pre;
   width: 100%;
@@ -128,12 +149,22 @@ main#intro > div > div:nth-child(2) > span:first-child {
 }
 ul.links {
   color: var(--white);
-  font-size: 1.4em;
+  font-size: 1.45em;
   display: flex;
+  letter-spacing: 0.5em;
   list-style: none;
+  position: relative;
   justify-content: space-evenly;
 }
-
+/* ul.links::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: -10px;
+  left: 0;
+  background-color: white;
+} */
 header#icons > span.icon,
 header#icons > div:nth-child(2) > span:nth-child(2) {
   position: relative;
@@ -178,7 +209,7 @@ header#icons > div:nth-child(2) {
 div#main-txt > div > h5 > span,
 div#main-txt > div > h5 > div > span,
 main#intro > div > div:nth-child(2) > span,
-main#intro > div > ul.links > li > span {
+main#intro > div > ul.links > li > a > span {
   white-space: pre;
   display: inline-block;
 }
@@ -205,8 +236,10 @@ section#about.active > div:nth-child(1),
 section#contact.active > div:nth-child(1) {
   display: flex;
 }
-
-section#about.active > div:nth-child(1) > div:nth-child(1) {
+section#about.active {
+  font-size: 100%;
+}
+section#about.active > div > div:nth-child(1) {
   font-size: 4.2em;
   letter-spacing: 0.09em;
   flex-direction: column;
@@ -306,6 +339,7 @@ section#contact.active > div a {
 ul.links > li {
   position: relative;
 }
+
 ul.links > li::before {
   content: "";
   position: absolute;

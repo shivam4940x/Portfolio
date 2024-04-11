@@ -4,7 +4,7 @@ $(document).ready(function () {
         intro: {
             top: $('div#main-txt').find("span"),
             mid: $("main#intro > div > div:nth-child(2)").find("span"),
-            bottom: $("main#intro > div > ul.links").find("span")
+            bottom: $("main#intro > div > ul.links > li").find("span")
         },
         contact: [
             "section#contact.active > div > ul > li",
@@ -15,8 +15,9 @@ $(document).ready(function () {
         ]
     }
 
-    const intro = {
-        active: async function () {
+
+    const active = {
+        intro: async function () {
             function ehe(elem, speed) {
                 g.set(elem, { transformOrigin: 'bottom left' });
                 elem.each(function (index, element) {
@@ -32,7 +33,7 @@ $(document).ready(function () {
             await $('#intro').fadeIn(function () {
                 $(this).css("display", "flex")
             });
-            menuOut(async () => {
+            menuOut(() => {
                 ehe(elements.intro.top, 0.035);
                 ehe(elements.intro.mid, 0.08);
                 ehe(elements.intro.bottom, 0.26);
@@ -43,37 +44,6 @@ $(document).ready(function () {
                 );
             });
         },
-        deactive: async function () {
-            function ehe(elem, speed) {
-                g.set(elem, { transformOrigin: 'bottom left' });
-                elem.each(function (index, element) {
-                    let singleElement = $(element);
-                    g.to(singleElement, {
-                        scaleY: 0,
-                        duration: 0.27,
-                        ease: "back.in(1.3)",
-                        delay: (elem.length - index - 1) * speed
-                    });
-                });
-                return new Promise((resolve, reject) => {
-                    const totalDuration = elem.length * speed + 0.3;
-                    setTimeout(() => {
-                        resolve();
-                    }, totalDuration * 1000);
-                });
-            };
-
-            await Promise.all([
-                ehe(elements.intro.top, 0.02),
-                ehe(elements.intro.mid, 0.05),
-                ehe(elements.intro.bottom, 0.1),
-
-            ]);
-            $('#intro').fadeOut();
-            menuIn();
-        }
-    }
-    const active = {
         about: async function () {
             const aboutElements = elements.about;
             menuOut(async () => {
@@ -89,8 +59,8 @@ $(document).ready(function () {
                         g.to(ele, {
                             y: 0,
                             opacity: 1,
-                            duration: 0.4,
-                            stagger: 0.3,
+                            duration: 0.3,
+                            stagger: 0.2,
                             delay: ind * 1,
                             ease: 'back.in-out(1.5)'
                         })
@@ -151,7 +121,36 @@ $(document).ready(function () {
 
     }
     const deactive = {
-        contact: async function () {
+        intro: async function (jumpFunction, moveTo) {
+            function ehe(elem, speed) {
+                g.set(elem, { transformOrigin: 'bottom left' });
+                elem.each(function (index, element) {
+                    let singleElement = $(element);
+                    g.to(singleElement, {
+                        scaleY: 0,
+                        duration: 0.27,
+                        ease: "back.in(1.3)",
+                        delay: (elem.length - index - 1) * speed
+                    });
+                });
+                return new Promise((resolve, reject) => {
+                    const totalDuration = elem.length * speed + 0.3;
+                    setTimeout(() => {
+                        resolve();
+                    }, totalDuration * 1000);
+                });
+            };
+
+            await Promise.all([
+                ehe(elements.intro.top, 0.02),
+                ehe(elements.intro.mid, 0.05),
+                ehe(elements.intro.bottom, 0.1),
+            ]);
+            $('#intro').fadeOut();
+            menuIn(jumpFunction, moveTo);
+
+        },
+        contact: async function (jumpFunction, moveTo) {
             const contElements = elements.contact;
             const animationPromises = contElements.map((ele, ind) => {
                 return new Promise(resolve => {
@@ -172,11 +171,11 @@ $(document).ready(function () {
             });
             Promise.all(animationPromises).then(() => {
                 $(".active").fadeOut();
-                menuIn();
+                menuIn(jumpFunction, moveTo);
                 g.set(".active", { clearProps: "all" })
             });
         },
-        about: async function () {
+        about: async function (jumpFunction, moveTo) {
             const aboutElements = elements.about;
             const animationPromises = aboutElements.map((ele, ind) => {
                 return new Promise(resolve => {
@@ -197,23 +196,17 @@ $(document).ready(function () {
             });
             Promise.all(animationPromises).then(() => {
                 $(".active").fadeOut();
-                menuIn();
+                menuIn(jumpFunction, moveTo);
                 g.set(".active", { clearProps: "all" })
             });
         }
     }
 
-    async function menuIn() {
+    async function menuIn(jumpFunction, TargatedElement) {
         await $("div#menu").fadeToggle(function () {
             $(this).css('display', "flex")
         });
-        const inAnimation = {
-            y: -200,
-            opacity: 0,
-            duration: 0.9,
-            ease: "linear",
-            stagger: 0.08,
-        };
+
         g.from("div#menu-wrap > ul > li > span > span", {
             y: -150,
             opacity: 0,
@@ -221,7 +214,25 @@ $(document).ready(function () {
             ease: "back.out(1.8)",
             delay: 0.75
         })
-        g.from("div#menu-wrap > ul > li > span", inAnimation);
+        g.from("div#menu-wrap > ul > li > span", {
+            y: -200,
+            opacity: 0,
+            duration: 0.9,
+            ease: "linear",
+            stagger: 0.08,
+        })
+            .then(() => {
+                if (jumpFunction) {
+                    console.log(TargatedElement)
+                    jumpFunction();
+                    $('.active').addClass('nonActive');
+                    $('.active').removeClass('active');
+                    $(TargatedElement).addClass('active');
+                    $(TargatedElement).removeClass('nonActive');
+                }
+            })
+
+
     };
     function menuOut(callback) {
         const outAnimation = {
@@ -243,7 +254,7 @@ $(document).ready(function () {
         let activeSection = $(".active");
         if (menu.style.display === 'flex') {
             if ($(activeSection).attr("id") === "intro") {
-                intro.active();
+                active.intro();
             }
             else if ($(activeSection).attr("id") === 'about') {
                 active.about();
@@ -257,7 +268,7 @@ $(document).ready(function () {
             $("div > span.icon:nth-child(2) > svg").removeClass('svgClicked');
         } else {
             if ($(activeSection).attr("id") === "intro") {
-                intro.deactive();
+                deactive.intro();
             }
             else if ($(activeSection).attr("id") === "contact") {
                 deactive.contact();
@@ -287,7 +298,7 @@ $(document).ready(function () {
             $('.active').addClass('nonActive');
             $('.active').removeClass('active');
             if (data === 'intro') {
-                intro.active();
+                active.intro();
                 clickedElement = `main#intro`;
             }
             else if (data === 'about') {
@@ -368,13 +379,28 @@ $(document).ready(function () {
             }
         );
     }
-    function backToHome() {
 
-    }
 
     menuButtonClicked();
     menuButtonsHover();
-    // $("header#icons > span.icon:nth-child(1)").click(backToHome);
     $("div > span.icon:nth-child(2) > svg").click(menuTogggle);
-    //menue ends
+    //menue ends and checkpoints start
+    $('main#intro > div > ul.links > li:nth-child(2) > a').click(function () {
+        deactive.intro(active.about, "#about");
+    });
+    $('header#icons > span.icon > svg').click(function () {
+        const currentSection = $(".active").attr("id");
+        switch (currentSection) {
+            case "about":
+                deactive.about(active.intro, "#intro")
+                break;
+            case "contact":
+                deactive.contact(active.intro, "#intro")
+                break;
+            case "about":
+                deactive.work(active.intro, "#intro")
+                break;
+        }
+
+    });
 });
