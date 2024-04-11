@@ -36,7 +36,7 @@ $(document).ready(function () {
             menuOut(() => {
                 ehe(elements.intro.top, 0.035);
                 ehe(elements.intro.mid, 0.08);
-                ehe(elements.intro.bottom, 0.26);
+                ehe(elements.intro.bottom, 0.1);
                 $("div#menu").fadeToggle(
                     function () {
                         g.set("div#menu-wrap > ul > li > span", { clearProps: "all" });
