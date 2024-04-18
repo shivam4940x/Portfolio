@@ -71,7 +71,6 @@ $(document).ready(function () {
         intro("I'm a Web Developer", $('main > div.wrapper > main#intro > div > div:nth-child(2)'));
         intro("Git", $('main#intro > div > ul.links > li:nth-child(1) > a'));
         intro("About", $('main#intro > div > ul.links > li:nth-child(2) > a'));
-        intro("Resume", $('main#intro > div > ul.links > li:nth-child(3) > a'));
         return green;
     }).then((greenishGreen) => {
         initText();

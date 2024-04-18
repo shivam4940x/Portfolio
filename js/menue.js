@@ -295,19 +295,24 @@ $(document).ready(function () {
         $("div#menu-wrap > ul > li").click(function () {
             const data = $(this).data('text');
             let clickedElement = `section#${data}`;
+        const currentUrlWithoutHash = window.location.href.split("#")[0];
             $('.active').addClass('nonActive');
             $('.active').removeClass('active');
             if (data === 'intro') {
+                window.location.href = currentUrlWithoutHash + "#home";
                 active.intro();
                 clickedElement = `main#intro`;
             }
             else if (data === 'about') {
+                window.location.href = currentUrlWithoutHash + "#about";
                 active.about();
             }
             else if (data === 'work') {
+                window.location.href = currentUrlWithoutHash + "#work";
                 active.work();
             }
             else {
+                window.location.href = currentUrlWithoutHash + "#contact";
                 active.contact();
             }
             $("div > span.icon:nth-child(2) > svg").removeClass('svgClicked');
@@ -390,9 +395,12 @@ $(document).ready(function () {
     });
     $('header#icons > span.icon > svg').click(function () {
         const currentSection = $(".active").attr("id");
+        const currentUrlWithoutHash = window.location.href.split("#")[0];
+        window.location.href = currentUrlWithoutHash + "#main";
         switch (currentSection) {
             case "about":
-                deactive.about(active.intro, "#intro")
+                deactive.about(active.intro, "#intro");
+
                 break;
             case "contact":
                 deactive.contact(active.intro, "#intro")
