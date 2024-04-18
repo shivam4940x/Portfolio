@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         this.body.addEventListener('mouseleave', function (e) {
             cursor.style.visibility = 'hidden';
         });
-        var isTouchDevice =
+        let isTouchDevice =
           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
             navigator.userAgent
           );
