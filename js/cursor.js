@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
             navigator.userAgent
           );
         if (!isTouchDevice) {
-        animate();
+            animate();
+        }else{
+        $(".cursor").css("display","none");
     }
     }
     NOMNOM();
