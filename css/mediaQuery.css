@@ -7,7 +7,7 @@
     font-size: 80%;
   }
   section#about.active {
-    top: 50%;
+    top: 35%;
     width: 50vw;
   }
   section#contact.active > div > ul > li > img {
@@ -112,7 +112,7 @@
   }
   section#about.active {
     top: 40%;
-    width: 70vw;
+    width: 75vw;
   }
   section#about.active > div:nth-child(1) {
     flex-direction: column;
@@ -135,8 +135,12 @@
   }
   section#contact.active,
   section#about.active {
-    top: 42%;
+    top: 10%;
   }
+  section#contact.active{
+          top: 25%;
+
+        }
   section#contact.active > div > ul {
     width: 100%;
   }

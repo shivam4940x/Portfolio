@@ -219,8 +219,8 @@ main#intro > div > ul.links > li > a > span {
 .active {
   z-index: 1;
   left: 50%;
-  transform: translate(-50%, -40%);
-  top: 50%;
+  transform: translate(-50%, 0);
+  top: 30%;
   background-color: transparent;
   position: fixed;
   font-family: "bellota";
