@@ -223,7 +223,6 @@ $(document).ready(function () {
         })
             .then(() => {
                 if (jumpFunction) {
-                    console.log(TargatedElement)
                     jumpFunction();
                     $('.active').addClass('nonActive');
                     $('.active').removeClass('active');
@@ -236,7 +235,7 @@ $(document).ready(function () {
     };
     function menuOut(callback) {
         const outAnimation = {
-            y: -200,
+            x: -200,
             opacity: 0,
             duration: 0.6,
             ease: "back.in(1.4)",
@@ -392,6 +391,9 @@ $(document).ready(function () {
     //menue ends and checkpoints start
     $('main#intro > div > ul.links > li:nth-child(2) > a').click(function () {
         deactive.intro(active.about, "#about");
+    });
+    $(".contact_link").click(function () {
+      deactive.about(active.contact, "#contact");
     });
     $('header#icons > span.icon > svg').click(function () {
         const currentSection = $(".active").attr("id");
